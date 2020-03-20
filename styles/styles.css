@@ -1,0 +1,167 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #000000;
+}
+
+ul.flex-container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul.flex-container.first-row li {
+  width: 250px;
+  flex-grow: 1;
+}
+
+ul.flex-container.second-row li {
+  width: 400px;
+  flex-grow: 1;
+}
+
+ul.flex-container li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ul.flex-container li {
+  position: relative;
+}
+
+ul.flex-container li:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  cursor: pointer;
+  background: #000000;
+  background: rgb(0, 0, 0);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.1522600838307584) 34%,
+    rgba(0, 0, 0, 0.3573162636060393) 100%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.1522600838307584) 34%,
+    rgba(0, 0, 0, 0.3573162636060393) 100%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.1522600838307584) 34%,
+    rgba(0, 0, 0, 0.3573162636060393) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+
+ul.flex-container li span.photo-caption {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  z-index: 10;
+  font-size: 20px;
+  font-family: serif;
+  color: #ffffff;
+  font-variant: all-petite-caps;
+  background: rgb(5, 2, 2);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 3px 5px;
+  opacity: 0;
+}
+
+ul.flex-container li:hover span.photo-caption {
+  opacity: 1;
+}
+
+/* Navigation */
+.navigation {
+  list-style-type: none;
+  margin: 0;
+  background: #302121;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.navigation a {
+  color: #ffffff;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navigation a:hover {
+  background: #140e0e;
+}
+
+/* Media queries for gallery */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  ul.flex-container.first-row li,
+  ul.flex-container.second-row li {
+    width: 200px;
+    flex-grow: 1;
+  }
+  /* Navigation */
+  .navigation {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  .navigation a {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+  }
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  ul.flex-container.second-row li {
+    width: 250px;
+    flex-grow: 1;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  ul.flex-container.first-row li,
+  ul.flex-container.second-row li {
+    width: 300px;
+    flex-grow: 1;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
